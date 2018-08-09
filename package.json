@@ -4,7 +4,7 @@
     "dev": "next",
     "build": "next build",
     "export": "next build; next export",
-    "functions": "netlify-lambda build functions-src",
+    "functions": "netlify-lambda build functions",
     "format": "prettier --write 'lib/**/*.js' 'pages/**/*.js' 'functions/**/*.js'"
   },
   "dependencies": {

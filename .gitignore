@@ -1,4 +1,5 @@
 out
 .env
 .next
+.functions
 node_modules
