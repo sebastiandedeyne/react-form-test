@@ -10,6 +10,8 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    const params = JSON.parse(event.body);
+
     await client.transmissions.send({
       content: {
         from: "bot@sebastiandedeyne.com",
@@ -17,8 +19,8 @@ exports.handler = async (event, context) => {
         html: `
           <html>
             <body>
-              <p>Name: ${event.body.name}</p>
-              <p>E-mail: ${event.body.email}</p>
+              <p>Name: ${params.name}</p>
+              <p>E-mail: ${params.email}</p>
             </body>
           </html>
         `
