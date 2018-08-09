@@ -44,7 +44,10 @@ export default class Index extends Component {
   }
 
   submit = values => {
-    console.log(values);
+    fetch("/.netlify/functions/submit", {
+      method: "post",
+      body: JSON.stringify(values)
+    });
   };
 
   render() {
