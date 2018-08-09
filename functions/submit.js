@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 const SparkPost = require("sparkpost");
 const queryString = require("query-string");
