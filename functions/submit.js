@@ -1,7 +1,6 @@
 // require("dotenv").config();
 
 const SparkPost = require("sparkpost");
-const queryString = require("query-string");
 
 const client = new SparkPost(process.env.SPARKPOST_API_KEY);
 
@@ -9,9 +8,6 @@ exports.handler = async (event, context) => {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
-
-  console.log(`Body: ${event.body}`);
-  const params = queryString.parse(event.body);
 
   try {
     await client.transmissions.send({
@@ -21,8 +17,8 @@ exports.handler = async (event, context) => {
         html: `
           <html>
             <body>
-              <p>Name: ${params.name}</p>
-              <p>E-mail: ${params.email}</p>
+              <p>Name: ${event.body.name}</p>
+              <p>E-mail: ${event.body.email}</p>
             </body>
           </html>
         `
