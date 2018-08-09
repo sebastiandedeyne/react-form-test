@@ -43,9 +43,9 @@ export default class Index extends Component {
     };
   }
 
-  submit = (values) => {
+  submit = values => {
     console.log(values);
-  }
+  };
 
   render() {
     return (
@@ -56,9 +56,7 @@ export default class Index extends Component {
       >
         <TextInput name="name" label="Name" />
         <TextInput name="email" label="E-mail" />
-        <button type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </Form>
     );
   }

@@ -1,7 +1,7 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const SparkPost = require('sparkpost');
-const queryString = require('query-string');
+const SparkPost = require("sparkpost");
+const queryString = require("query-string");
 
 const client = new SparkPost(process.env.SPARKPOST_API_KEY);
 
@@ -15,8 +15,8 @@ exports.handler = async (event, context) => {
   try {
     await client.transmissions.send({
       content: {
-        from: 'bot@sebastiandedeyne.com',
-        subject: 'Hello, World!',
+        from: "bot@sebastiandedeyne.com",
+        subject: "Hello, World!",
         html: `
           <html>
             <body>
@@ -26,11 +26,9 @@ exports.handler = async (event, context) => {
           </html>
         `
       },
-      recipients: [
-        { address: process.env.EMAIL_RECIPIENT }
-      ]
+      recipients: [{ address: process.env.EMAIL_RECIPIENT }]
     });
-  } catch(e) {
+  } catch (e) {
     return { statusCode: 500 };
   }
 
