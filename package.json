@@ -4,14 +4,19 @@
     "dev": "next",
     "build": "next build",
     "export": "next build; next export",
+    "functions": "netlify-lambda build functions-src",
     "format": "prettier --write 'lib/**/*.js' 'pages/**/*.js' 'functions/**/*.js'"
   },
   "dependencies": {
     "dotenv": "^6.0.0",
+    "netlify-lambda": "^0.4.0",
     "next": "^6.1.1",
     "query-string": "^6.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "sparkpost": "^2.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
   }
 }
