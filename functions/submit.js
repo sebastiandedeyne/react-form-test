@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const params = querystring.parse(event.body);
+  const params = queryString.parse(event.body);
 
   try {
     await client.transmissions.send({
